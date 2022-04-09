@@ -1,0 +1,73 @@
+table{
+  border-spacing:100px;
+  text-align: center;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -750px;
+  margin-top: -250px;
+  border-collapse: collapse;
+  width: 1600px;
+  height: 500px;
+}
+td{
+  width: 200px;
+}
+#father{
+    height: 100vh;
+    position: relative;   
+}
+.first{
+  width: 150px;
+}
+.itinerary{
+    background-color: lightblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 250px;
+    margin-top: -125px;
+    margin-left: -250px;
+}
+ul{ 
+    width: 180px;
+    height: 50px;
+    position: absolute;
+    list-style: none;
+    top: 50%;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -120px;
+    }
+#submit{
+    width: 100px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.itinerarying{
+  background-color:aqua;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 250px;
+  margin-top: -125px;
+  margin-left: -250px;
+}
+#titleing{
+  margin-bottom: 10px;
+}
+#finish{
+  width: 50px;
+  float: left;
+}
+#cancel{
+  width: 50px;
+  float: right;
+  margin-right: 13px;
+}
+td:hover{
+  box-shadow: inset darkgrey 2px 2px 6px 6px
+}

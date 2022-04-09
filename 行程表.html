@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=initial-scale=1.0">
+    <title>行程表</title>
+    <link href="行程表样式表.css" rel="stylesheet">
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="father">
+  <table border="1px solid black" >
+    <tr>
+        <th class="first"><input type="button" value="增加事项" id="addthing"></th>
+        <th>一</th>
+        <th>二</th>
+        <th>三</th>
+        <th>四</th>
+        <th>五</th>
+        <th>六</th>
+        <th>七</th>
+    </tr>
+    <tr>
+        <th class="first">待办事项</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th class="first">待办事项</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th class="first" >待办事项</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+  </table> 
+</div>
+<div class="itinerary" id="do" style="display:none">
+   <ul>
+    <li>标题<input type="text" id="title"></li>
+    <li>事件<textarea id="thing"></textarea></li>
+    <li><input type="submit" id="submit"></li>
+   </ul>
+</div>
+<div class="itinerarying" id="doing" style="display:none">
+    <ul>
+    <li>标题<input type="text" id="titleing"></li>
+    <li>事件<textarea id="thinging"></textarea></li>
+    <li><input type="button" value="完成" id="finish"></li>
+    <li><input type="button"value="取消" id="cancel"></li>
+    </ul>
+ </div>
+<script>
+    //localStorage.clear();
+    function opendo(){
+        document.getElementById("do").style="display:block";   
+    }
+    var td = [];                                                           //创建空数组用于储存td对象
+    function Td(id,title,thing){                                           //构造函数，创建td对象
+            this.id=id;
+            this.title=title;
+            this.thing=thing;
+        }                                                                                                      
+    function getid(){                                                     
+        id = this.id;
+        return id
+    }
+    window.onload= init;                                                   
+    function init(){
+        /*td = JSON.parse(localStorage.getItem("localtd"))
+        $.each(td,function(index,value){
+            document.getElementById("index").innerHTML=td.index.title
+        })*/
+        //$("td").eq(1).innerHTML=localstorage.getItem("id");
+        $("#addthing").bind("click",addthing)
+        
+        submit.onclick=close;                                           
+        var td = $("td");                      
+        for (var i=0;i<td.length;i++){
+            $("td").eq(i).attr("id",i);
+            td[i].onclick=function(){
+                id = this.id;
+                $("#cancel").bind("click",function(){
+                    $("#doing").attr({"style":"display:none"});
+                    document.getElementById(id).onclick=showing;     
+                })  
+                $("#finish").bind("click",function(){
+                    $("#doing").attr({"style":"display:none"});
+                    document.getElementById(id).innerHTML="";
+                    $("#titleing").val("");
+                    $("#thinging").val("");
+                    localStorage.removeItem(id)
+                    document.getElementById(id).onclick=opendo;  
+                })
+                if(localStorage.length>0){  
+                    for(var i=0;i<localStorage.length;i++){
+                        if(id == localStorage.key(i)){
+                            document.getElementById("doing").style="display:block"
+                            var tdobj = JSON.parse(localStorage.getItem(key));
+                            title = tdobj.title;
+                            thing = tdobj.thing;
+                            $("#titleing").val(title);
+                            $("#thinging").val(thing);
+                        }else{
+                            document.getElementById("do").style="display:block";
+                        }
+                    }
+                }else{
+                    document.getElementById("do").style="display:block"
+                }
+            };
+            $("td").eq(i).bind("click",getid)
+        }
+            if(localStorage.length>0){
+                for(var i=0;i<localStorage.length;i++){ 
+                    var key = localStorage.key(i);
+                    var tdobj = JSON.parse(localStorage.getItem(key));
+                    var title = tdobj.title;
+                    var id = tdobj.id;
+                    document.getElementById(id).innerHTML=title;
+                }
+            }
+
+    }
+    /*   
+           创建一个Td构造函数创建td对象储存在数组td中对应id的位置
+      同时获取用户的输入储存在对象中并清空用户输入的数值,用于关闭输入表格 
+    */
+    function close(){
+        var id = getid();                                                             
+        var title = $("#title").val();
+        var thing = $("#thing").val();
+        document.getElementById(id).innerHTML=title;
+        var tdobj= new Td(id,title,thing);
+        td[id] = tdobj;        
+        $("#title").val("");
+        $("#thing").val("");        
+        document.getElementById(id).onclick=show;
+        $("#do").attr({"style":"display:none"});              
+        localStorage.setItem(id,JSON.stringify(tdobj));
+
+    }
+    function show(){
+        var id =getid();
+        td =td[id];
+        $("#doing").attr({"style":"display:block"});
+        $("#titleing").val(td.title);
+        $("#thinging").val(td.thing);
+    }
+    function showing(){
+        $("#doing").attr({"style":"display:block"});
+        $("#titleing").val(td.title);
+        $("#thinging").val(td.thing);
+    }
+    function addthing(){
+        $("tr").last().after("<tr><th>待办事项</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>");
+        $("tr").last().attr("class","first");
+        $("table").animate({height:"+=100px"});
+    }
+
+
+
+
+  
+</script>
+    
+</body>
+</html>
