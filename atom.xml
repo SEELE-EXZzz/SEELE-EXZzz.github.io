@@ -20,12 +20,12 @@
 &lt;p&gt;除最后一层有两个子节点外，最后一层没有子节点，如果某个满二叉树有 k 层则该满二叉树有 2 的 k 次方 - 1 个节点。&lt;/p&gt;
 &lt;h3 id=&#34;2-完全二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-完全二叉树&#34;&gt;#&lt;/a&gt; 2. 完全二叉树&lt;/h3&gt;
 &lt;p&gt;最后一层如果有缺的子节点则该子节点为右侧的子节点。如果某个完全二叉树有 k 层，则该完全二叉树则有 2 的 k-1 次方到 2 的 k 次方 - 1 个节点。满二叉树是特殊的完全二叉树&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/algorithm/binary_tree/%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8C%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.png?Expires=1689348518&amp;amp;OSSAccessKeyId=TMP.3Kjp4GsqVbpTyN17mUPbjxYJxy7mnNaFBXqimbnPiitNoBGVgcPG3HMHEHgJ6jtQp6F2obNtKLWa3Z2XUSMr7fKLChag8K&amp;amp;Signature=PQvtz8N2dZAuMDGXyHMyKAO1uIU%3D&#34; alt=&#34;文件无法预览。&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/algorithm/binary_tree/%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8C%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3-二叉搜索树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-二叉搜索树&#34;&gt;#&lt;/a&gt; 3. 二叉搜索树&lt;/h3&gt;
 &lt;p&gt;二叉搜索树中某个节点的左节点值小于该节点，右节点值大于该节点&lt;/p&gt;
 &lt;h3 id=&#34;4-二叉平衡树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-二叉平衡树&#34;&gt;#&lt;/a&gt; 4. 二叉平衡树&lt;/h3&gt;
 &lt;p&gt;在二叉搜索树的条件下，高度差不大于一，二叉平衡树是特殊的二叉搜索树。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/algorithm/binary_tree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E5%92%8C%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91.png?Expires=1689348526&amp;amp;OSSAccessKeyId=TMP.3Kjp4GsqVbpTyN17mUPbjxYJxy7mnNaFBXqimbnPiitNoBGVgcPG3HMHEHgJ6jtQp6F2obNtKLWa3Z2XUSMr7fKLChag8K&amp;amp;Signature=DUzFY75Q1AH1BiNOz%2BTTUIPBdLk%3D&#34; alt=&#34;文件无法预览。&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/algorithm/binary_tree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E5%92%8C%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;三-二叉树的遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-二叉树的遍历&#34;&gt;#&lt;/a&gt; 三、二叉树的遍历&lt;/h2&gt;
 &lt;h3 id=&#34;1-深度优先算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-深度优先算法&#34;&gt;#&lt;/a&gt; 1. 深度优先算法&lt;/h3&gt;
 &lt;h4 id=&#34;1-递归法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-递归法&#34;&gt;#&lt;/a&gt; 1. 递归法&lt;/h4&gt;
