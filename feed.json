@@ -7,9 +7,9 @@
     "home_page_url": "https://seele-exzzz.github.io",
     "items": [
         {
-            "id": "https://seele-exzzz.github.io/2023/09/11/project/%E8%BD%AF%E4%BB%B6%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/",
-            "url": "https://seele-exzzz.github.io/2023/09/11/project/%E8%BD%AF%E4%BB%B6%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/",
-            "title": "",
+            "id": "https://seele-exzzz.github.io/2023/09/11/project/ProjectFunction/",
+            "url": "https://seele-exzzz.github.io/2023/09/11/project/ProjectFunction/",
+            "title": "项目功能介绍",
             "date_published": "2023-09-11T07:06:23.365Z",
             "content_html": "<h2 id=\"截图\"><a class=\"markdownIt-Anchor\" href=\"#截图\">#</a> 截图</h2>\n<h3 id=\"1-画笔橡皮擦文字复制到剪切板的功能展示\"><a class=\"markdownIt-Anchor\" href=\"#1-画笔橡皮擦文字复制到剪切板的功能展示\">#</a> 1. 画笔，橡皮擦，文字，复制到剪切板的功能展示。</h3>\n<p>​\t画笔：可以使用下面的按钮以及输入框改变画笔的大小并在截图区域绘制。</p>\n<p>​    橡皮擦：清除用画笔绘制的内容同时可以使用下面的按钮以及输入框改变橡皮擦的大小</p>\n<p>​\t文字：在截图框输入文字。</p>\n<p>​\t复制：点击√即可复制到剪切板。</p>\n<p><img data-src=\"https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/qiuzhao/projectezgif.com-video-to-gif.gif\" alt=\"\"></p>\n<h3 id=\"2-退出撤回保存的功能展示\"><a class=\"markdownIt-Anchor\" href=\"#2-退出撤回保存的功能展示\">#</a> 2. 退出，撤回，保存的功能展示。</h3>\n<p>​\t\t退出：右键可以退出截图同时截图框可以拖动，截图内容以拖动后的截图框为主。</p>\n<p>​\t\t撤回：当进入编辑截图时，点击撤回即可清除绘制以及文本等等内容。</p>\n<p>​\t\t保存：保存按钮将图片保存。</p>\n<p><img data-src=\"https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/qiuzhao/projectezgif.com-video-to-gif%20(1).gif\" alt=\"\"></p>\n<h2 id=\"便利贴\"><a class=\"markdownIt-Anchor\" href=\"#便利贴\">#</a> 便利贴</h2>\n<h3 id=\"1创建清除便利贴的功能展示\"><a class=\"markdownIt-Anchor\" href=\"#1创建清除便利贴的功能展示\">#</a> 1. 创建，清除便利贴的功能展示。</h3>\n<p>​\t 可以创建便利贴并在便利贴记录事情。便利贴可以创建多个，且可以移动。当事情完成后就可以清除。当软件启动时，未清除的便利贴还会显示。</p>\n<p><img data-src=\"https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/qiuzhao/projectezgif.com-video-to-gif%20(2).gif\" alt=\"\"></p>\n",
             "tags": []
