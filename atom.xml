@@ -14,7 +14,7 @@
         <title>地球可视化优化</title>
         <link rel="alternate" href="https://seele-exzzz.github.io/2024/04/04/project/%E5%9C%B0%E7%90%83%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BC%98%E5%8C%96/"/>
         <content type="html">&lt;p&gt;地球可视化的项目制作完毕后，使用 chrome 的 lighthouse 检测性能后，结果如下。还有不少改进的地方。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;C:/Users/66426/AppData/Roaming/Typora/typora-user-images/image-20240404144319869.png&#34; alt=&#34;image-20240404144319869&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/watchearth/optimization20240407151803.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;C:/Users/66426/AppData/Roaming/Typora/typora-user-images/image-20240404144359636.png&#34; alt=&#34;image-20240404144359636&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;一-图片压缩转格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-图片压缩转格式&#34;&gt;#&lt;/a&gt; 一、图片压缩转格式&lt;/h3&gt;
 &lt;p&gt;图片可以使用 tinyPNG 压缩，然后转为 webp 格式。能缩小体积。地球可视化用到了地球，太阳和星空的贴图原先加起来 1540kb 的图片，压缩后为 358kb，效果显著。&lt;/p&gt;
@@ -36,8 +36,8 @@
  &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;import(&amp;#x27;./world.json&amp;#x27;).then((mapData)=&amp;gt;&amp;#123;&amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;最终结果如下，效果显著，不过性能从 77 分提升至 94 分，就 lcp 差一些。lcp 是指用户看到最大内容所需要的时间，地球可视化最先看到的应该是地球而不是底下的地图，可以 lighthouse 却将底下的地图当做最大内容，统计底下地图渲染出来的时间，这个明显有误，最佳的用户体验应该是最先看到地球而不是地图。实际上上面三个步骤优化体验最明显的应该是图片压缩转格式，因为项目不大，引入的子组件体积不大，一般就 100kb，动态引入子组件少加载的 200 多 kb，相比三张图片压缩减少的 1.2mb 来说还是太少了。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;C:/Users/66426/AppData/Roaming/Typora/typora-user-images/image-20240406170908832.png&#34; alt=&#34;image-20240406170908832&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最终结果如下，效果显著，不过性能从 77 分提升至 95 分，就 lcp 差一些。lcp 是指用户看到最大内容所需要的时间，地球可视化最先看到的应该是地球而不是底下的地图，可以 lighthouse 却将底下的地图当做最大内容，统计底下地图渲染出来的时间，这个明显有误，最佳的用户体验应该是最先看到地球而不是地图。实际上上面三个步骤优化体验最明显的应该是图片压缩转格式，因为项目不大，引入的子组件体积不大，一般就 100kb，动态引入子组件少加载的 200 多 kb，相比三张图片压缩减少的 1.2mb 来说还是太少了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/watchearth/optimization20240407151813.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;三-减少打包体积&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-减少打包体积&#34;&gt;#&lt;/a&gt; 三、减少打包体积&lt;/h3&gt;
 &lt;p&gt;​	原先的项目中有 threejs，Echarts 等等第三方库，这些第三方库打包进去后文件的体积过大有 2283kb，经过打包压缩后仍然有 674kb，使用 cdn 引入这些第三方库，然后打包的时候就可以不用将这些库引入进去，从而减少打包的体积。&lt;/p&gt;
 &lt;p&gt;检测打包体积工具 webpack-bundle-analyzer&lt;/p&gt;
@@ -48,7 +48,7 @@
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;configureWebpack:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    externals:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#x27;vue&amp;#x27;:&amp;#x27;Vue&amp;#x27;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#x27;vue-router&amp;#x27;:&amp;#x27;VueRouter&amp;#x27;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#x27;THREE&amp;#x27;:&amp;#x27;three&amp;#x27;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#x27;echarts&amp;#x27;:&amp;#x27;echarts&amp;#x27;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;原先打包体积为 2283kb，压缩后为 674kb。将第三方库使用 cdn 引入，不将其打包进去后，体积为 68kb，压缩后为 26kb。看起来效果显著。不过在使用 lighthouse 测试后却发现与想象中的不一样，实际运行速度反而慢了。&lt;/p&gt;
 &lt;p&gt;结果如下，除了 tbt 快了之外，其他反而慢了。大概可能有两个原因，一个是项目中使用 cdn 加速的服务器为 jsdelivr，而我项目部署的服务器为 cloudflare，可能 jsdelivr 相比 cloudflare 的速度要慢一些。第二个原因可能是将大的文件拆分成多个小的文件后，请求次数变多，加重请求负担从而降低速度。对于多个小的文件是可以采用一次请求获取，比如精灵图，将多个小图片拼接成大的图片，然后请求大的图片即可，这样能减少请求次数。具体是哪个原因，个人认为大概率是因为 jsdelivr 的服务器速度不如 cloudflare 的服务器速度。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;C:/Users/66426/AppData/Roaming/Typora/typora-user-images/image-20240406172516397.png&#34; alt=&#34;image-20240406172516397&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://typora-seele-exzzz.oss-cn-guangzhou.aliyuncs.com/img/watchearth/optimization20240407151839.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​	此外，还可以在 package.json 中 &amp;quot;build&amp;quot;: “vue-cli-service build --modern”，在后面再 modern。这样就能打两份包，一份给高版本的浏览器使用，无需兼容低版本浏览器，体积更小，运行速度更快，一份给低版本浏览器使用用于兼容低版本浏览器。&lt;/p&gt;
 &lt;p&gt;参考资料：&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWhBNG0xMzd4dw==&#34;&gt;https://www.bilibili.com/video/BV1hA4m137xw&lt;/span&gt;&lt;/p&gt;
